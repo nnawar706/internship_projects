@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///home/selopia/Documents/task1_day1/in.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Feed The Cat!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap css link -->
+    <link rel="stylesheet" href="./Feed The Cat!_files/bootstrap.min.css">
+    <!-- custom css file -->
+    <link rel="stylesheet" href="./Feed The Cat!_files/style.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="row margin-bottom">
+        <div class="col-md-4">
+            <div class="score_display">
+                <p class="score-txt">Score</p>
+                <p class="score-no" id="score">0</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="msg" class="msg">Feed me!</div>
+        </div>
+        <div class="col-md-4">
+            <div class="msg" onclick="reset()" style="cursor: pointer;">RESET GAME!</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 cat">
+            <img src="./Feed The Cat!_files/feeder.jpg" id="feeder">
+        </div>
+        <div class="col-md-6" style="margin-left: auto; margin-right: 0;" id="area">
+            <img class="cat_img droppable" id="cat" src="./Feed The Cat!_files/sad_cat.png">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="position">
+                <p>Feeder Position</p>
+                <p id="coordinate">XXXXX</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div id="area">
+    <img src="images/sad_cat.png" id="gate" class="droppable">
+</div>
+<br><br>
+<img src="images/feeder.jpg" id="ball">
+
+
+<p id="msg"></p>
+<p id="score">0</p>-->
+
+<script src="./Feed The Cat!_files/main2.js"></script>
+
+<!-- bootstrap javascript link -->
+<script src="./Feed The Cat!_files/jquery-3.2.1.slim.min.js"></script>
+<script src="./Feed The Cat!_files/popper.min.js"></script>
+<script src="./Feed The Cat!_files/bootstrap.min.js"></script>
+
+
+</body></html>

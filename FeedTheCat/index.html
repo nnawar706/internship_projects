@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Feed The Cat!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap css link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- custom css file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="row margin-bottom">
+        <div class="col-md-4">
+            <div class="score_display">
+                <p class="score-txt">Score</p>
+                <p class="score-no" id="score">0</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="msg" class="msg">Feed me!</div>
+        </div>
+        <div class="col-md-4">
+            <div class="msg" onclick="reset()" style="cursor: pointer;">RESET GAME!</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 cat">
+            <img src="images/feeder.jpg" id="feeder">
+        </div>
+        <div class="col-md-6" style="margin-left: auto; margin-right: 0;" id="area">
+            <img class="cat_img droppable" id="sad_cat" src="images/sad_cat.png" />
+            <img class="cat_img droppable" id="happy_cat" src="images/happy_cat.png" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="show-time">
+                <p>Time to complete: <span id="timerDisplay">NaN</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="position">
+                <p>Feeder Position: <span id="coordinate">NaN</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p id="demo" class="times">Times to complete will show here</p>
+
+<!-- custom javascript link -->
+<script src="js/main2.js"></script>
+
+<!-- bootstrap javascript link -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
