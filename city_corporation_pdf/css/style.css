@@ -1,0 +1,130 @@
+@font-face {
+    font-family: BNfont;
+    src: url('../fonts/Unicode/Li_Hasan_Jolchobi_Unicode.ttf');
+}
+
+@media print {
+    body, page {
+        margin: 0;
+        box-shadow: 0;
+    }
+}
+
+#pdf_content{
+    font-family: BNfont;
+}
+
+page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+}
+
+page[size="A4"][layout="landscape"] {
+    width: 29.7cm;
+    height: 21cm;
+}
+
+p {
+    font-size: 12px;
+    font-family: BNfont;
+}
+
+.padding-top {
+    padding-top: 10px;
+}
+
+.padding-top-xl {
+    padding-top: 25px;
+}
+
+.vertical_line {
+    height: 500px;
+    border: 0.5px dotted #000;
+}
+
+.center {
+    width: 93%;
+}
+
+.and {
+    content: "\00D7";
+}
+
+.header-1 {
+    font-size: 12px;
+    font-family: BNfont;
+    text-align: center;
+    color: rgb(56, 52, 52);
+    margin-top: 5px;
+}
+
+.header-2 {
+    font-size: 12px;
+    font-family: BNfont;
+    text-align: center;
+    color: rgb(56, 52, 52);
+}
+
+.watermark img {
+    position: absolute;
+    opacity: 0.1;
+    top: 240px;
+    right: 20px;
+    z-index: 1;
+}
+
+.underline {
+    border-bottom: 1px dashed #000;
+    color: #fff;
+}
+
+table {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 5px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid;
+}
+
+.cell1 {
+    margin: 5px 3%;
+}
+
+.cell-1 {
+    border-right: 1px dashed #000;
+}
+
+.border-paragraph {
+    margin-top: 30px;
+    padding: 10px 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.passport-img {
+    height: 140px;
+    width: 110px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.show-barcode {
+    height: 60px;
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+.qrcode {
+    height: 80px;
+    width: 80px;
+}
