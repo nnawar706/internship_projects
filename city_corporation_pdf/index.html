@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>City Corporation</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- bootstrap css link -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="js/JsBarcode.all.min.js"></script>
+    <script type="text/javascript" src="js/JsBarcode.all.min.js"></script>
+    <script type="text/javascript" src="js/qrcode.min.js"></script>
+    <script src="./jsPDF/dist/jspdf.umd.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script type="text/javascript">
+
+        window.html2canvas = html2canvas;
+        window.jsPDF = window.jspdf.jsPDF;
+        function makepdf(){
+            html2canvas(document.getElementById("pdf"),{
+                allowTaint: true,
+                useCORS: true,
+                scale: 1
+            }).then(canvas=>{
+                document.body.appendChild(canvas)
+                const img = canvas.toDataURL("images/signature.png");
+                const doc = new jsPDF('l', 'pt', [1170, 827]);
+                doc.addImage(img, 'png', 0, 0, 1170, 827);
+                doc.save('sample-pdf.pdf');
+            })
+        }
+    </script>
+
+
+</head>
+<body class="page">
+<button onclick="makepdf()" id="download" class="btn btn-dark">Print PDF</button>
+
+<!--
+<button id="pdf-generate" class="btn btn-info btn-print">Download</button>
+
+    <div class="padding-top-xl text-center">
+        <button id="pdf-generate" class="btn btn-info" onclick="generatePDF();">Download</button>
+    </div>
+    -->
+    <page size="A4" layout="landscape" id="pdf">
+        <div class="container-fluid content">
+            <div class="row">
+                <div class="col-md-4 cell-1">
+                    <img src="images/19-bank-copy.png" height="75" class="center" alt="">
+                    <div class="header-1">
+                        অযান্ত্রিক যানবাহন নিবন্ধনের বিল
+                        <br>
+                        (নবায়নের ক্ষেত্রে প্রযোজ্য)
+                        <br>
+                        গ্রাহকের লাইসেন্স নম্বর
+                        <svg class="show-barcode" id="barcode1"></svg>
+                        <div class="watermark">
+                            <img src="images/watermark.jpeg" height="100" width="100" alt="">
+                        </div>
+                    </div>
+
+                    <div class="cell1">
+                        <p>আবেনকারীর নামঃ দিদারুল ইসলাম<br>
+                            জাতীয় পরিচয়পত্র নম্বরঃ<br>
+                            মোবাইল নম্বরঃ<br>
+                            যানবাহনের ধরণঃ রিক্সা</p>
+                        <table class="center-table">
+                            <tr>
+                                <th>বিবরণ</th>
+                                <th>দর</th>
+                                <th>পরিমাণ</th>
+                            </tr>
+                            <tr>
+                                <td>বকেয়া সন <br>২০২০-২১ হতে <br>২০২১-২২</td>
+                                <td>১০০ x ২</td>
+                                <td>২০০/-</td>
+                            </tr>
+                            <tr>
+                                <td>হাল সন <br>২০২২-২৩ হতে <br>২০২৩-২৪</td>
+                                <td>১০০ x ২</td>
+                                <td>২০০/-</td>
+                            </tr>
+                            <tr>
+                                <td>বার্ষিক নিবন্ধন ফি</td>
+                                <td>৩০০/-</td>
+                                <td>৩০০/-</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">সর্বমোট</td>
+                                <td>৭০০/-</td>
+                            </tr>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-5 padding-top">
+                                <g id="qrcode1"></g>
+                            </div>
+                            <div class="col-md-7 padding-top">
+                                <img src="images/signature.png" height="40" width="60" alt="" style="float: right;">
+                                <p style="float: right;">প্রধান রাজস্ব কর্মকর্তার স্বাক্ষর</p>
+                            </div>
+                        </div>
+                        <p class="border-paragraph">ওয়ান ব্যাংক, আন্দরকিল্লা শাখার ০৬৭৩০০০০০১০৪২ নম্বর হিসাবে <br> টাকা পরিশোধ করতে হবে।</p>
+                        <div class="row padding-top-xl">
+                            <div class="col-md-6">
+                                <hr style="height: 0.5px; background-color: #000">
+                                <p>ব্যাংক কর্মকর্তার স্বাক্ষর ও সীল</p>
+                            </div>
+                            <div class="col-md-6">
+                                <hr style="height: 0.5px; background-color: #000;">
+                                <p>ব্যাংক কর্মকর্তার স্বাক্ষর ও সীল</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 cell-1">
+                    <img src="images/19-fee-data-copy.png" height="75" class="center" alt="">
+                    <div class="header-1">
+                        অযান্ত্রিক যানবাহন নিবন্ধনের বিল
+                        <br>
+                        (নবায়নের ক্ষেত্রে প্রযোজ্য)
+                        <br>
+                        গ্রাহকের লাইসেন্স নম্বর
+                        <svg class="show-barcode" id="barcode2"></svg>
+                        <div class="watermark">
+                            <img src="images/watermark.jpeg" height="100" width="100" alt="">
+                        </div>
+                    </div>
+                    <div class="cell1">
+                        <p>আবেনকারীর নামঃ দিদারুল ইসলাম<br>
+                        জাতীয় পরিচয়পত্র নম্বরঃ<br>
+                        মোবাইল নম্বরঃ<br>
+                        যানবাহনের ধরণঃ রিক্সা</p>
+                        <table class="center-table">
+                            <tr>
+                                <th>বিবরণ</th>
+                                <th>দর</th>
+                                <th>পরিমাণ</th>
+                            </tr>
+                            <tr>
+                                <td>বকেয়া সন <br>২০২০-২১ হতে <br>২০২১-২২</td>
+                                <td>১০০ x ২</td>
+                                <td>২০০/-</td>
+                            </tr>
+                            <tr>
+                                <td>হাল সন <br>২০২২-২৩ হতে <br>২০২৩-২৪</td>
+                                <td>১০০ x ২</td>
+                                <td>২০০/-</td>
+                            </tr>
+                            <tr>
+                                <td>বার্ষিক নিবন্ধন ফি</td>
+                                <td>৩০০/-</td>
+                                <td>৩০০/-</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">সর্বমোট</td>
+                                <td>৭০০/-</td>
+                            </tr>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-5 padding-top">
+                                <g id="qrcode2"></g>
+                            </div>
+                            <div class="col-md-7 padding-top">
+                                <img src="images/signature.png" height="40" width="60" alt="" style="float: right;">
+                                <p style="float: right;">প্রধান রাজস্ব কর্মকর্তার স্বাক্ষর</p>
+                            </div>
+                        </div>
+                        <p class="border-paragraph">ওয়ান ব্যাংক, আন্দরকিল্লা শাখার ০৬৭৩০০০০০১০৪২ নম্বর হিসাবে <br> টাকা পরিশোধ করতে হবে।</p>
+                        <div class="row padding-top-xl">
+                            <div class="col-md-6">
+                                <hr style="height: 0.5px; background-color: #000">
+                                <p>ব্যাংক কর্মকর্তার স্বাক্ষর ও সীল</p>
+                            </div>
+                            <div class="col-md-6">
+                                <hr style="height: 0.5px; background-color: #000;">
+                                <p>ব্যাংক কর্মকর্তার স্বাক্ষর ও সীল</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/19-corporation-copy.png" height="75" class="center" alt="">
+                    <div class="header-1">
+                        অযান্ত্রিক যানবাহন নিবন্ধনের বিল
+                        <br>
+                        (নবায়নের ক্ষেত্রে প্রযোজ্য)
+                        <br>
+                        গ্রাহকের লাইসেন্স নম্বর
+                        <br>
+                        <svg class="show-barcode" id="barcode3"></svg>
+                        <div class="watermark">
+                            <img src="images/watermark.jpeg" height="100" width="100" alt="">
+                        </div>
+                    </div>
+
+                    <div class="cell1">
+                        <p>আবেনকারীর নামঃ দিদারুল ইসলাম <br>
+                        জাতীয় পরিচয়পত্র নম্বরঃ <br>
+                        মোবাইল নম্বরঃ <br>
+                        যানবাহনের ধরণঃ রিক্সা</p>
+                        <table class="center-table">
+                            <tr>
+                                <th>বিবরণ</th>
+                                <th>দর</th>
+                                <th>পরিমাণ</th>
+                            </tr>
+                            <tr>
+                                <td>বকেয়া সন <br>২০২০-২১ হতে <br>২০২১-২২</td>
+                                <td>১০০ x ২</td>
+                                <td>২০০/-</td>
+                            </tr>
+                            <tr>
+                                <td>হাল সন <br>২০২২-২৩ হতে <br>২০২৩-২৪</td>
+                                <td>১০০ x ২</td>
+                                <td>২০০/-</td>
+                            </tr>
+                            <tr>
+                                <td>বার্ষিক নিবন্ধন ফি</td>
+                                <td>৩০০/-</td>
+                                <td>৩০০/-</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">সর্বমোট</td>
+                                <td>৭০০/-</td>
+                            </tr>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-5 padding-top">
+                                <g id="qrcode3"></g>
+                            </div>
+                            <div class="col-md-7 padding-top">
+                                <img src="images/signature.png" height="40" width="60" alt="" style="float: right;">
+                                <p style="float: right;">প্রধান রাজস্ব কর্মকর্তার স্বাক্ষর</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div>
+                                    <p class="passport-img"><b>আবেদনকারীর<br>১ কপি রঙ্গিন<br>পাসপোর্ট সাইজ<br>ছবি আঠা দিয়ে<br>সংযুক্ত করুন</b></p>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-6">
+                                <hr style="height: 0.5px; background-color: #000; margin-top: 50px;">
+                                <p style="text-align: center;"><b>আবেদনকারীর স্বাক্ষর</b></p>
+                                <hr style="height: 0.5px; background-color: #000; margin-top: 40px;">
+                                <p style="text-align: center;">কর্মকর্তার স্বাক্ষর ও সীল</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </page>
+
+
+    <!-- js links -->
+
+    <script type="text/javascript" src="js/main.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
